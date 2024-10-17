@@ -1,4 +1,4 @@
-import { ChatOpenAI } from "@langchain/openai";
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import { ROUTE_QUERY_PROMPT } from "../prompts";
 import { OpenCanvasGraphAnnotation } from "../state";
 import { formatArtifacts } from "../utils";
@@ -70,8 +70,8 @@ export const generatePath = async (
         : "No artifacts found."
     );
 
-  const modelWithTool = new ChatOpenAI({
-    model: "gpt-4o-mini",
+  const modelWithTool = new ChatGoogleGenerativeAI({
+    model: "gemini-1.5-flash",
     temperature: 0,
   }).withStructuredOutput(
     z.object({
