@@ -15,7 +15,7 @@ export const generateArtifact = async (
   config: LangGraphRunnableConfig
 ): Promise<OpenCanvasGraphReturnType> => {
   const smallModel = new ChatGoogleGenerativeAI({
-    model: "gemini-1.5-flash",
+    model: "gemini-1.5-pro-002",
     temperature: 0.5,
   });
 
