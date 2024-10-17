@@ -1,4 +1,4 @@
-import { ChatOpenAI } from "@langchain/openai";
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import { OpenCanvasGraphAnnotation, OpenCanvasGraphReturnType } from "../state";
 import {
   ADD_COMMENTS_TO_CODE_ARTIFACT_PROMPT,
@@ -10,8 +10,8 @@ import {
 export const rewriteCodeArtifactTheme = async (
   state: typeof OpenCanvasGraphAnnotation.State
 ): Promise<OpenCanvasGraphReturnType> => {
-  const smallModel = new ChatOpenAI({
-    model: "gpt-4o",
+  const smallModel = new ChatGoogleGenerativeAI({
+    model: "gemini-1.5-flash",
     temperature: 0.5,
   });
 
