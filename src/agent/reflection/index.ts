@@ -1,4 +1,4 @@
-import { ChatAnthropic } from "@langchain/anthropic";
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import {
   type LangGraphRunnableConfig,
   StateGraph,
@@ -36,8 +36,8 @@ export const reflect = async (
       .describe("The complete new list of memories/facts about the user."),
   });
 
-  const model = new ChatAnthropic({
-    model: "claude-3-5-sonnet-20240620",
+  const model = new ChatGoogleGenerativeAI({
+    model: "gemini-1.5-flash",
     temperature: 0,
   }).withStructuredOutput(generateReflectionsSchema, {
     name: "generate_reflections",
