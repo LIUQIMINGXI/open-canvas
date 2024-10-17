@@ -1,4 +1,4 @@
-import { ChatOpenAI } from "@langchain/openai";
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 import { OpenCanvasGraphAnnotation, OpenCanvasGraphReturnType } from "../state";
 import { UPDATE_ENTIRE_ARTIFACT_PROMPT } from "../prompts";
 import { ensureStoreInConfig, formatReflections } from "@/agent/utils";
@@ -9,8 +9,8 @@ export const rewriteArtifact = async (
   state: typeof OpenCanvasGraphAnnotation.State,
   config: LangGraphRunnableConfig
 ): Promise<OpenCanvasGraphReturnType> => {
-  const smallModel = new ChatOpenAI({
-    model: "gpt-4o",
+  const smallModel = new ChatGoogleGenerativeAI({
+    model: "gemini-1.5-flash",
     temperature: 0.5,
   });
 
