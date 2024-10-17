@@ -37,7 +37,7 @@ export const reflect = async (
   });
 
   const model = new ChatGoogleGenerativeAI({
-    model: "gemini-1.5-flash",
+    model: "gemini-1.5-pro-002",
     temperature: 0,
   }).withStructuredOutput(generateReflectionsSchema, {
     name: "generate_reflections",
