@@ -15,7 +15,7 @@ export const generateFollowup = async (
   const smallModel = new ChatGoogleGenerativeAI({
     model: "gemini-1.5-pro-002",
     temperature: 0.5,
-    maxTokens: 250,
+    maxTokens: 5000,
   });
 
   const store = ensureStoreInConfig(config);
